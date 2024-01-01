@@ -1,22 +1,20 @@
 import { Routes, Route } from "react-router-dom"
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
+import PostDetails from "./pages/PostDetails"
 
 const App = () => {
   return (
     <div>
-      <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route exact path="/register" element={<Register/>} />
-        <Route exact path="/login" element={<Login/>} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/posts/post/:id" element={<PostDetails/>} />
       </Routes>
-      <Footer />
     </div>
-  )
+  );
 }
 
 export default App
