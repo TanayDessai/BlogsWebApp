@@ -1,3 +1,4 @@
+import scene from "../assets/scene.jpg"
 
 const HomePosts = () => {
   return (
@@ -5,7 +6,7 @@ const HomePosts = () => {
       {/* left */}
       <div className="w-[35%] h-[200px] flex justify-center items-center">
         <img
-          src="https://pngtree.com/freebackground/aerial-3d-rendering-design-surreal-mountain-vistas-from-high-altitude_13315109.html"
+          src={scene}
           alt=""
           className="h-full w-full object-cover"
         />
