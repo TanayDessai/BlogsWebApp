@@ -1,12 +1,12 @@
 import { useContext } from "react"
-import { UserConext } from "../context/UserContext"
+import { UserContext } from "../context/UserContext"
 import axios from "axios"
 import { URL } from "../url"
 
 
 const Menu = () => {
-    const {user}=useContext(UserConext)
-    const {setUser}=useContext(UserConext)
+    const {user}=useContext(UserContext)
+    const {setUser}=useContext(UserContext)
     
 
     const handleLogout=async()=>{

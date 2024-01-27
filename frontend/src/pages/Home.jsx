@@ -3,9 +3,11 @@ import Footer from "../components/Footer";
 import HomePosts from "../components/HomePosts"
 import Navbar from "../components/Navbar";
 import { URL } from "../url";
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Loader from '../components/Loader'
+import { UserContext } from "../context/UserContext";
+
 
 const Home = () => {
 
@@ -14,6 +16,8 @@ const Home = () => {
   const [posts,setPosts]=useState([])
   const [noResults,setNoResults]=useState(false)
   const [loader,setLoader]=useState(false)
+  const {user}=useContext(UserContext)
+  console.log(user)
 
   const fetchPosts = async()=>{
     setLoader(true)
@@ -45,7 +49,12 @@ const Home = () => {
       <Navbar />
       <div className="px-8 md:px-[200px] min-h-[80vh]">
        {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?posts.map((post)=>(
-          <HomePosts post={post} key={post._id}/>
+        <>
+        <Link to={user?'/posts/post/${post._id}':"login"}>
+        <HomePosts key={post._id} post={post}/>
+        </Link>
+        </>
+        
        )):<h3 className="text-center font-bold mt-16">No post available</h3>}
       </div>
       <Footer />
