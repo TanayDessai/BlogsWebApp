@@ -13,7 +13,6 @@ const Register = () => {
   const [error,setError]=useState(false)
   const navigate=useNavigate()
 
-
   const handleRegister=async ()=>{
     
     try{
