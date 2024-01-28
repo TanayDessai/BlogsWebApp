@@ -1,21 +1,21 @@
-const mongoose = require('mongoose')
+const mongoose=require('mongoose')
 
 const CommentSchema=new mongoose.Schema({
     comment:{
         type:String,
-        require:true,
+        required:true,
     },
     author:{
         type:String,
-        require:true,
+        required:true,
     },
     postId:{
         type:String,
-        require:true,
+        required:true,
     },
-    userID:{
+    userId:{
         type:String,
-        require:true
+        required:true
     }
 },{timestamps:true})
 
